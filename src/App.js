@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import BtnGroup from './BtnGroup.js';
+import Str from './Str.js';
 
 function App() {
+  const com = () => Math.floor(Math.random()*3)+1;
+  let comCli = [];
+  let userCli = [];
+  let userScore = 0;
+  let comScore = 0;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section id='str'>
+        <Str
+          comCli = {comCli}
+          userCli = {userCli}
+          userScore = {userScore}
+          comScore = {comScore}
+        />
+      </section>
+      <section id='btn'>
+        <BtnGroup
+          com ={com}
+          comCli = {comCli}
+          userCli = {userCli}
+          userScore = {userScore}
+          comScore = {comScore}
+        />
+      </section>
+      
     </div>
   );
 }
